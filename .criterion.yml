@@ -2,7 +2,5 @@ setup:
     - phing -buildfile build.xml  -Dni_build=true init
 script:
     - phing -buildfile build.xml -Dtesting.reporter=PhingXMLPHPUnit3ResultFormatter -Ddb.user=root -Ddb.name=builddb -Dmodule=mysite -Dni_build=true -Ddb.type=MySQLDatabase -Ddb.pass=  -Dtesting.db.name=tmpdb_test build -logger phing.listener.DefaultLogger
-fail:
-    -
 pass:
     - phing -buildfile build.xml -Dni_build=true package
